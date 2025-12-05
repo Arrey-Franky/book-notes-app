@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Book</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 1.8em;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input, textarea, button {
+      margin-bottom: 15px;
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    label {
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Add a New Book</h1>
+
+  <form action="/add" method="POST">
+
+  <!-- Title (REQUIRED) -->
+  <label for="title">Title</label>
+  <input type="text" id="title" name="title" placeholder="Enter book title" required />
+
+  <!-- Author (REQUIRED) -->
+  <label for="author">Author</label>
+  <input type="text" id="author" name="author" placeholder="Enter author's name" required />
+
+  <!-- Rating shown as text (allows 4.5 or 4/5) -->
+  <!-- This is ONLY for display. Your app.js must convert it into rating_num and rating_fraction internally -->
+  <label for="display_rating">Rating (4.5 or 4/5)</label>
+  <input type="text" id="display_rating" name="display_rating" placeholder="Enter rating e.g. 4.5 or 4/5" required />
+
+  <!-- Link URL (REQUIRED by your database NOT NULL column) -->
+  <label for="link_url">Book Link URL</label>
+  <input type="text" id="link_url" name="link_url" placeholder="Paste the book link" required />
+
+  <!-- Published Date (REQUIRED) -->
+  <label for="published_date">Published Date</label>
+  <input type="date" id="published_date" name="published_date" required />
+
+  <!-- Notes (REQUIRED because you updated it to NOT NULL) -->
+  <label for="notes">Notes</label>
+  <textarea id="notes" name="notes" placeholder="Add notes about the book" required></textarea>
+
+  <!-- Submit button -->
+  <button type="submit">Save Book</button>
+
+</form>
+
+  </div>
+</body>
+</html>
