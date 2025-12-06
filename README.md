@@ -1,4 +1,5 @@
 📚 Book Notes App
+
 A simple and beautiful web application that lets you save, organize, and review your favorite books.
 You can add books with ratings, notes, cover images, published dates, and direct links.
 The app also lets you edit, delete, and sort your books easily.
@@ -7,6 +8,7 @@ Built with Node.js, Express, EJS, and PostgreSQL.
 
 
 Features
+
 Add new books with title, author, rating, notes, published date, cover image, and link.
 
 Edit or delete existing books.
@@ -38,12 +40,15 @@ Nodemon (dev)
 
 
 Prerequisites
+
 Make sure you have the following installed on your machine:
 
 Node.js
+
  (v16 or higher recommended)
 
 npm
+
  (comes with Node.js)
 
 PostgreSQL
@@ -56,10 +61,13 @@ PostgreSQL
 Follow these steps to run the project locally.
 
 1️⃣ Clone the repository
+
 git clone https://github.com/Arrey-Franky/book-notes-app.git
+
 cd book-notes-app
 
 2️⃣ Install dependencies
+
 npm install
 
 3️⃣ Create a PostgreSQL database
@@ -73,10 +81,15 @@ booknotes
 Create a .env file in the root of your project (DO NOT upload it to GitHub):
 
 DB_USER=your_username
+
 DB_HOST=localhost
+
 DB_NAME=booknotes
+
 DB_PASSWORD=your_password
+
 DB_PORT=5432
+
 PORT=3000
 
 
@@ -103,15 +116,25 @@ http://localhost:3000
 Your books table should look like this:
 
 CREATE TABLE books (
+
   id SERIAL PRIMARY KEY,
+
   title VARCHAR(255) NOT NULL,
+
   author VARCHAR(255),
+
   rating INTEGER,
+
   notes TEXT,
+
   cover_url TEXT,
+
   published_date VARCHAR(50),
+
   link_url TEXT,
+
   date_created TIMESTAMP NOT NULL DEFAULT NOW()
+
 );
 
 🌐 Deployment
