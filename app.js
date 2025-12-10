@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
 import axios from "axios";
-import env from "dotenv"; 
+import env from "dotenv";
 
 const app = express();
 const port = 3000;
@@ -13,11 +13,11 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 const db = new pg.Client({
-  user: process.env.PG_USER,
-  host: process.env.PG_HOST,
-  database: process.env.PG_DATABASE,
-  password: process.env.PG_PASSWORD,
-  port: process.env.PG_PORT,
+  user: "postgres",
+  host: "localhost",
+  database: "booknotes",
+  password: "realpostgre1",
+  port: 5432,
 });
 
 db.connect();
