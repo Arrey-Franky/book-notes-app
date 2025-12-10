@@ -7,7 +7,7 @@ Built with Node.js, Express, EJS, and PostgreSQL.
 
 
 
-Features
+✨Features
 
 Add new books with title, author, rating, notes, published date, cover image, and link.
 

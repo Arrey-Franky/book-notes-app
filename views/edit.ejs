@@ -50,7 +50,7 @@
     }
 
     button {
-      background-color: #28a745;
+      background-color: #007bff;
       color: #fff;
       border: none;
       cursor: pointer;
@@ -58,7 +58,7 @@
     }
 
     button:hover {
-      background-color: #218838;
+      background-color: #0056b3;
     }
 
     label {
@@ -69,31 +69,38 @@
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="container"> <br> <br> <br> <br> <br>
     <h1>Edit Book</h1>
+
     <form action="/update/<%= book.id %>" method="POST">
 
+      <!-- Title -->
       <label for="title">Title</label>
-      <input type="text" id="title" name="title" value="<%= book.title %>" required />
+      <input type="text" id="title" name="title" value="<%= book.title %>" required>
 
+      <!-- Author -->
       <label for="author">Author</label>
-      <input type="text" id="author" name="author" value="<%= book.author %>" />
+      <input type="text" id="author" name="author" value="<%= book.author %>" required>
 
-      <label for="rating">Rating (0-5)</label>
-      <input type="number" id="rating" name="rating" value="<%= book.rating %>" min="0" max="5" step="0.1" />
+      <!-- Rating (display rating like 4.5 or 4/5) -->
+      <label for="rating">Rating (4.5 or 4/5)</label>
+      <input type="text" id="rating" name="rating" value="<%= book.display_rating %>" required>
 
+      <!-- Link URL (NEW FIELD) -->
+      <label for="link_url">Book Link URL</label>
+      <input type="text" id="link_url" name="link_url" value="<%= book.link_url %>" required>
+
+      <!-- Published Date -->
       <label for="published_date">Published Date</label>
-      <input
-        type="date"
-        id="published_date"
-        name="published_date"
-        value="<%= book.published_date ? book.published_date.toISOString().slice(0,10) : '' %>"
-      />
+      <input type="date" id="published_date" name="published_date" value="<%= book.published_date %>" required>
 
+      <!-- Notes -->
       <label for="notes">Notes</label>
-      <textarea id="notes" name="notes"><%= book.notes %></textarea>
+      <textarea id="notes" name="notes" required><%= book.notes %></textarea>
 
+      <!-- Submit -->
       <button type="submit">Update Book</button>
+
     </form>
   </div>
 </body>
